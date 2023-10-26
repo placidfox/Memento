@@ -7,27 +7,28 @@
         <link rel ="stylesheet" href="./style.css">
     </head>
 
-    <body>
+    <body class="body-light">
 
-    <div class="app">
-            
-            <h1 class="title">Memento</h1>
+        <div class="app">
+                
+                <h1 class="title">Memento</h1>
 
-            <div class="note-pad">
+                <div class="note-pad">
 
-                <p class="date-title"></p>
+                    <p class="date-title"></p>
 
-                <div contenteditable="true" class="note-box">
+                    <div contenteditable="true" class="note-box">
+                    </div>
+
+                    <div class="button_container">
+                        <button class="export-btn">Download .txt file</button>
+                        <button class="clipboard-btn">Copy to Clipboard</button>
+                    </div>
+
                 </div>
+                <button class="switch-theme">Switch Light/Dark Theme</button>
 
-                <div class="button_container">
-                    <button class="export-btn">Download .txt file</button>
-                    <button class="clipboard-btn">Copy to Clipboard</button>
-                </div>
-
-            </div>
-
-    </div>
+        </div>
 
 
     <script src="script.js"></script>

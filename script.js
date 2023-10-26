@@ -1,6 +1,8 @@
 const notePad = document.querySelector(".note-box");
+
 const exportButton = document.querySelector(".export-btn");
 const clipboardButton = document.querySelector(".clipboard-btn");
+const switchThemeButton = document.querySelector(".switch-theme");
 
 
 const titleText = document.querySelector(".date-title")
@@ -15,6 +17,7 @@ function initNotepad(){
     titleText.innerHTML = date;
 
     notePad.innerHTML = localStorage.getItem("note");
+    document.body.setAttribute("class", localStorage.getItem("theme"));
 }
 
 
@@ -100,6 +103,24 @@ exportButton.addEventListener("click", ()=>{
 clipboardButton.addEventListener("click", ()=>{
     copyClipboard()
 })
+
+
+switchThemeButton.addEventListener("click", ()=>{
+    switchTheme()
+})
+
+function switchTheme(){
+    if (document.body.className == "body-light"){
+        document.body.setAttribute("class", "body-dark");
+    } else {
+        document.body.setAttribute("class", "body-light");
+    }
+
+    
+
+    localStorage.setItem("theme", document.body.className);
+
+}
 
 
 document.addEventListener("keydown", event => {
