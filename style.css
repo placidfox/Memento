@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'PoppinsRegular';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+
+
 .app{
     margin : 0;
     padding : 0;
-    font-family: 'Courier New';
+    font-family: 'PoppinsRegular';
     box-sizing: border-box;
 }
 
@@ -53,7 +59,7 @@
 
 button {
     background-color: black;
-    font-family: 'Courier New';
+    font-family: 'PoppinsRegular';
     border: none;
     color: white;
     padding: 10px 20px;
