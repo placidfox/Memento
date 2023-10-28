@@ -14,12 +14,14 @@ function initNotepad(){
 
     titleText.innerHTML = date;
 
-    notePad.innerHTML = localStorage.getItem("note");
+    notePad.innerHTML = localStorage.getItem("note"); 
 }
 
 
 function saveNotes(){
-    localStorage.setItem("note", notePad.innerHTML);
+    // DON'T CHANGE STORAGE KEY TO AVOIR LOSING NOTES ON UPDATING EXTENSION
+    localStorage.setItem("note", notePad.innerHTML); 
+    // DON'T CHANGE STORAGE KEY TO AVOIR LOSING NOTES ON UPDATING EXTENSION
 }
 
 
