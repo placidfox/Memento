@@ -1,14 +1,16 @@
 const notePad = document.querySelector(".note-box");
 
-const exportButton = document.querySelector(".export-btn");
-const clipboardButton = document.querySelector(".clipboard-btn");
-const switchThemeButton = document.querySelector(".switch-theme");
+const exportButton = document.getElementById("export-btn");
+const clipboardButton = document.getElementById("clipboard-btn");
+const switchThemeButton = document.getElementById("switch-theme");
 
 
 const titleText = document.querySelector(".date-title")
 
+var isLightTheme = localStorage.getItem("theme");
 
-initNotepad()
+initTheme()
+initNotepad()   
 
 function initNotepad(){
 
@@ -17,7 +19,7 @@ function initNotepad(){
     titleText.innerHTML = date;
 
     notePad.innerHTML = localStorage.getItem("note");
-    document.body.setAttribute("class", localStorage.getItem("theme"));
+
 }
 
 
@@ -104,21 +106,47 @@ clipboardButton.addEventListener("click", ()=>{
     copyClipboard()
 })
 
-
 switchThemeButton.addEventListener("click", ()=>{
     switchTheme()
 })
 
+function initTheme(){
+
+    isLightTheme = localStorage.getItem("theme");
+    changeCSSTheme();
+
+}
+
 function switchTheme(){
-    if (document.body.className == "body-light"){
-        document.body.setAttribute("class", "body-dark");
-    } else {
+
+    isLightTheme = !isLightTheme;
+    localStorage.setItem("theme", isLightTheme);
+
+    changeCSSTheme()    
+
+}
+
+function changeCSSTheme(){
+
+    const buttons = document.getElementsByClassName("button")
+
+    if (isLightTheme){
         document.body.setAttribute("class", "body-light");
+
+        for (button of buttons){
+            button.setAttribute("class", "button light_button");
+        }
+
+
+    } else {
+        document.body.setAttribute("class", "body-dark");
+
+        for (button of buttons){
+            button.setAttribute("class", "button dark_button");
+        }
+
     }
 
-    
-
-    localStorage.setItem("theme", document.body.className);
 
 }
 

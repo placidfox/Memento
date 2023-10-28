@@ -70,11 +70,9 @@
 
 }
 
-button {
-    background-color: black;
+.button{
     font-family: 'PoppinsRegular';
     border: none;
-    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -82,6 +80,18 @@ button {
     font-size: 16px;
 }
 
-button:active{
+.button:active {
     background-color: grey;
 }
+
+.light_button {
+    background-color: black;
+    color: white;
+}
+
+.dark_button {
+    background-color: whitesmoke ;
+    color: black;
+}
+
+
