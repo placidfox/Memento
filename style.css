@@ -81,7 +81,7 @@
 }
 
 .button:active {
-    background-color: grey;
+    background-color: darkgrey;
 }
 
 .light_button {
