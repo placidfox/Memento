@@ -6,11 +6,11 @@
 
 .body-light{
     background-color: white;
-    color: black;
+    color: #0D1214;
 }
 
 .body-dark{
-    background-color: black;
+    background-color: #0D1214;
     color: white;
 }
 
@@ -85,13 +85,13 @@
 }
 
 .light_button {
-    background-color: black;
+    background-color: #0D1214;
     color: white;
 }
 
 .dark_button {
     background-color: whitesmoke ;
-    color: black;
+    color: #0D1214;
 }
 
 
