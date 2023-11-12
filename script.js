@@ -45,6 +45,10 @@ function updateMarkdown(){
             }
         }
 
+        if (line.innerHTML.charAt(0)== "-"){
+            line.setAttribute("id", "line_list");
+        }
+
 
     }
 
