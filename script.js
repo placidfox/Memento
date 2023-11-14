@@ -32,7 +32,7 @@ function updateMarkdown(){
 
     for (line of notePadText.children){
 
-        if (line.innerHTML.charAt(0) != "#"){
+        if (line.innerHTML.charAt(0) != "#" || line.innerHTML.charAt(0) != "!" || line.innerHTML.charAt(0) != "?" ){
             line.setAttribute("id", "line_plain");
         }
 
@@ -47,6 +47,30 @@ function updateMarkdown(){
 
         if (line.innerHTML.charAt(0)== "-"){
             line.setAttribute("id", "line_list");
+        }
+
+        if (line.innerHTML.charAt(0) == "!"){
+             if (line.innerHTML.charAt(1) == "#"){
+                if (line.innerHTML.charAt(2) == "#"){
+                    line.setAttribute("id", "line_subtitle_red");
+                } else {
+                    line.setAttribute("id", "line_title_red");
+                }
+            } else {
+                line.setAttribute("id", "line_red");
+            }
+        }
+
+        if (line.innerHTML.charAt(0) == "?"){
+            if (line.innerHTML.charAt(1) == "#"){
+                if (line.innerHTML.charAt(2) == "#"){
+                    line.setAttribute("id", "line_subtitle_blue");
+                } else {
+                    line.setAttribute("id", "line_title_blue");
+                }
+            } else {
+                line.setAttribute("id", "line_blue");
+            }
         }
 
 
